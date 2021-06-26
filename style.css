@@ -1,0 +1,360 @@
+:root {
+    --point-color: #112C8C;
+    --sub-point-color: #05A8FF;
+    /* 제목 폰트 */
+    --title-en-font: 'Raleway', sans-serif;
+    /* 일반 폰트 */
+    --regular-font: 'Noto Sans KR', sans-serif;
+    /* 특별 폰트 */
+    --specific-font: 'Do Hyeon', sans-serif;
+}
+
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+    /* 산세리프 한글 폰트 */
+    font-family: var(--regular-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--title-en-font);
+}
+
+ul, ol {
+    padding-inline-start: 25px;
+}
+
+li {
+    margin: 0.75em 0;
+}
+
+.scroll-snap {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.scroll-snap>section {
+    position: relative;
+    scroll-snap-align: start;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+/* 헤더 섹션 ------------------------------------ */
+
+#header {}
+
+#header h1 {
+    opacity: 1;
+    transform: translateX(0);
+    font-size: 34px;
+    letter-spacing: 0.5em;
+    animation: sliding-l2r-on 0.75s ease 0s 1 normal backwards;
+}
+
+#header h2 {
+    opacity: 1;
+    transform: translateX(0);
+    animation: sliding-l2r-on 0.75s ease 0.1s 1 normal backwards;
+}
+
+#header p {
+    opacity: 1;
+    transform: translateX(0);
+    animation: sliding-l2r-on 0.75s ease 0.2s 1 normal backwards;
+}
+
+@keyframes sliding-l2r-on {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 두번째 섹션 ------------------------------------ */
+
+#marker-on-map h2 {
+    min-width: 280px;
+    margin-bottom: 1.5em;
+    text-align: center;
+    font-family: var(--regular-font);
+}
+
+#marker-on-map ol {
+    /* font-size: 1.1em; */
+}
+
+#marker-on-map ol>li {
+    opacity: 1;
+    transform: translateY(0);
+    /* list-style: none; */
+    list-style: lower-roman;
+    animation: sliding-b2t-off 0s ease 0s forwards;
+}
+
+#marker-on-map ol>li.animation-on:nth-child(1) {
+    animation: sliding-b2t-on 0.75s ease 0s 1 normal backwards !important;
+}
+
+#marker-on-map ol>li.animation-on:nth-child(2) {
+    animation: sliding-b2t-on 0.75s ease 0.1s 1 normal backwards !important;
+}
+
+#marker-on-map ol>li.animation-on:nth-child(3) {
+    animation: sliding-b2t-on 0.75s ease 0.2s 1 normal backwards !important;
+}
+
+@keyframes sliding-b2t-off {
+    to {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+@keyframes sliding-b2t-on {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#marker-on-map ol>li>b {
+    color: var(--point-color);
+}
+
+/* 음표 아이콘 */
+
+/* #marker-on-map ol>li::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-inline-end: 0.75em;
+    background-repeat: no-repeat;
+}
+
+#marker-on-map ol>li:nth-child(1)::before {
+    background-image: url("musical-note.svg");
+}
+#marker-on-map ol>li:nth-child(2)::before {
+    background-image: url("music.svg");
+}
+#marker-on-map ol>li:nth-child(3)::before {
+    background-image: url("music-note.svg");
+} */
+
+/* 세번째 섹션 ------------------------------------ */
+
+#friends h2 {
+    opacity: 1;
+    transform: translateX(0);
+    font-family: var(--regular-font);
+    text-align: right;
+    padding-left: 1rem;
+    animation: sliding-r2l-off 0s ease 0s forwards;
+}
+
+#friends h2:nth-child(1).animation-on {
+    animation: sliding-r2l-on 0.75s ease 0s 1 normal backwards !important;
+}
+
+#friends h2:nth-child(2).animation-on {
+    animation: sliding-r2l-on 0.75s ease 0.1s 1 normal backwards !important;
+}
+
+@keyframes sliding-r2l-off {
+    to {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+@keyframes sliding-r2l-on {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#friends img {
+    width: 250px;
+}
+
+/* 마지막 섹션 ------------------------------------ */
+
+#last-section h1, #last-section h2, #last-section h3 {
+    font-family: var(--specific-font);
+    font-weight: 400;
+}
+
+#last-section h2 {
+    font-size: 1.75em;
+}
+
+#last-section h2>span, #last-section h1 {
+    color: var(--sub-point-color);
+}
+
+#last-section h3 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    font-size: 1.5em;
+}
+
+#last-section h1 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#last-section .images>img {
+    width: 100px;
+}
+
+/* 푸터 섹션 ------------------------------------ */
+
+#footer-section {
+    height: fit-content;
+    padding: 2rem 1rem;
+    font-size: 0.75em;
+    background-color: rgba(32, 32, 32, 0.025);
+}
+
+/* 데스크톱에서 ------------------------------------ */
+
+@media screen and (min-width: 800px) {
+    /* 헤더 섹션 ------------------------------------ */
+    #header h1 {
+        font-size: 72px;
+    }
+    #header h2 {
+        font-size: 42px;
+    }
+    #header p {
+        font-size: 21px;
+    }
+    /* 두번째 섹션 ------------------------------------ */
+    #marker-on-map {
+        flex-direction: row;
+        justify-content: center;
+    }
+    #marker-on-map img {
+        width: 250px;
+        margin-right: 10vw;
+    }
+    #marker-on-map h2 {
+        font-size: 2em;
+        text-align: left;
+    }
+    #marker-on-map ol {
+        font-size: 1.25em;
+    }
+    /* 세번째 섹션 ------------------------------------ */
+    #friends {
+        flex-direction: row;
+        justify-content: center;
+    }
+    #friends img {
+        width: 250px;
+        margin-left: 10vw;
+    }
+    /* 마지막 섹션 ------------------------------------ */
+    #last-section {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        column-gap: 10vw;
+        row-gap: 10vh;
+    }
+    #last-section h2 {
+        align-self: end;
+        text-align: left;
+    }
+    #last-section .images {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    #last-section .images>img {
+        width: 175px;
+    }
+    #last-section #signature-phrase {
+        align-self: start;
+        text-align: right;
+    }
+    #last-section #signature-phrase>h1 {
+        text-align: right;
+    }
+}
+
+/* 스크롤 유도 아이콘 ------------------------------------ */
+
+/* #scroll-icon {
+    opacity: 1;
+    transform: translateY(0);
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    animation: sliding-t2b 1.75s ease 1.5s 1 normal backwards;
+}
+
+@keyframes sliding-t2b {
+    0% {
+        opacity: 0;
+        transform: translateY(-36px);
+    }
+    33.3% {
+        transform: translateY(-36px);
+    }
+    66.6% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+} */
+
+/* 점 배경 ------------------------------------ */
+
+.bg-dot {
+    background-image: url("./dot-dark.svg");
+}
+
+.bg-images-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.bg-images-container>img {
+    position: absolute;
+    opacity: 0.25;
+}
