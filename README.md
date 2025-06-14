@@ -2,6 +2,7 @@
 A simple page promoting the mugip application.
 # Go to Website
  https://jneey2000.github.io/mugip-publicity-page/
-# ![뮤집 소개 이미지] (https://raw.githubusercontent.com/jneey2000/mugip-publicity-page/main/digging.image.PNG)
+![image](https://github.com/user-attachments/assets/f4e6bec6-c2da-4156-8279-d8b0812dbbba)
+
 
 
